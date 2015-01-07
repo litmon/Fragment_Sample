@@ -33,6 +33,7 @@ public class MainActivity extends ActionBarActivity implements SplashFragment.On
                 @Override
                 public void run() {
                     getSupportFragmentManager().beginTransaction()
+                            .setCustomAnimations(R.anim.abc_slide_in_top, R.anim.abc_slide_in_bottom)
                             .replace(R.id.container, new PlaceholderFragment())
                             .commit();
                     getSupportActionBar().show();
