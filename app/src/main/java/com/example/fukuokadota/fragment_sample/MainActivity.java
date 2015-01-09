@@ -23,7 +23,8 @@ public class MainActivity extends ActionBarActivity implements SplashFragment.On
         setContentView(R.layout.activity_main);
 
         if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
+            getSupportFragmentManager()
+                    .beginTransaction()
                     .add(R.id.container, new SplashFragment())
                     .commit();
             getSupportActionBar().hide();
@@ -32,13 +33,23 @@ public class MainActivity extends ActionBarActivity implements SplashFragment.On
             h.postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    getSupportFragmentManager().beginTransaction()
-                            .setCustomAnimations(R.anim.abc_slide_in_top, R.anim.abc_slide_in_bottom)
+                    String a = "aaaaaaaa";
+                    getSupportFragmentManager()
+                            .beginTransaction()
+
+                            // set animation
+                            // .setCustomAnimations(R.anim.abc_slide_in_top, R.anim.abc_slide_out_bottom)
+
+                            // replace splash fragment to placeholder fragment
                             .replace(R.id.container, new PlaceholderFragment())
+
+                            // commit
                             .commit();
+
                     getSupportActionBar().show();
                 }
             }, 3000);
+
         }
     }
 
