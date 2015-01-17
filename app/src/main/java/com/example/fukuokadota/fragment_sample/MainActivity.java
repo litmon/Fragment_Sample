@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.os.Build;
 
 
+// it's branch is the production branch
 
 public class MainActivity extends ActionBarActivity implements SplashFragment.OnFragmentInteractionListener{
 
